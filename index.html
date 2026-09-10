@@ -190,7 +190,7 @@ footer{background:#060e19;color:#91a1b5;padding:30px 0}.footer-inner{display:fle
   </div>
 </section>
 
-<footer<footer><div class="container footer-inner"><span>© 2026 Ayan Digital Studio</span><span>Websites • Designs • Creative Projects</span><span>Built with care • Ready to publish</span></div></footer>
+<footer><div class="container footer-inner"><span>© 2026 Ayan Digital Studio</span><span>Websites • Designs • Creative Projects</span><span>Built with care • Ready to publish</span></div></footer>
 <script>
 const STUDIO_EMAIL = "ayandigitalstudiocustomer@gmail.com"; // Add your real email here before publishing.
 document.getElementById("contactForm").addEventListener("submit", function(e){
@@ -201,8 +201,12 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
   const message = document.getElementById("message").value.trim();
   const subject = encodeURIComponent("New project enquiry — " + type);
   const body = encodeURIComponent(
-    "Name: " + name + "
-" +
+    const body = encodeURIComponent(
+  "Name: " + name + "\n" +
+  "Email: " + email + "\n" +
+  "Project type: " + type + "\n\n" +
+  message
+);
     "Email: " + email + "
 " +
     "Project type: " + type + "
