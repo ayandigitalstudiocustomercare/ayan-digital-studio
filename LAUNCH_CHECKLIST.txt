@@ -1,0 +1,16 @@
+AYAN DIGITAL STUDIO — FINAL QA
+
+Completed in Step 6:
+- Responsive navigation with mobile menu
+- Internal project links checked against included project pages
+- 404 fallback page added
+- Footer updated for production presentation
+- Existing contact form validation retained
+- No external live URLs invented
+
+BEFORE PUBLIC LAUNCH:
+1. Replace STUDIO_EMAIL in index.html with the real studio email.
+2. Open index.html and test every navigation/project button.
+3. Test the contact form on the device/browser you will use.
+4. Upload all files in this folder to your chosen static host.
+5. If using a custom domain, enable HTTPS.

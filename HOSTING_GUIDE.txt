@@ -1,0 +1,21 @@
+AYAN DIGITAL STUDIO — LAUNCH
+
+The site is a static website and can be published on any static web host.
+
+Files to upload:
+- index.html
+- royal-pizza-website.html
+- royal-pizza-menu.html
+- customer-feedback.html
+- royal-pizza-projects.png
+- 404.html
+
+Before publishing:
+1. Open index.html.
+2. Replace STUDIO_EMAIL with your real studio email.
+3. Test the navigation, project pages and contact form.
+4. Upload the files to your hosting provider.
+5. Enable HTTPS if your provider offers it.
+
+Important:
+This package is launch-ready, but I cannot directly publish it to a hosting account or purchase/connect a domain from this chat without access to that service.
