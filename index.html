@@ -5,225 +5,1516 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Ayan Digital Studio — websites, designs and creative digital projects.">
 <title>Ayan Digital Studio</title>
+
 <style>
 :root{
-  --bg:#08111f; --bg2:#0d1b2e; --card:#101f33; --text:#f6f8fc;
-  --muted:#aab8ca; --accent:#62d7ff; --accent2:#8b7cff;
-  --line:rgba(255,255,255,.10); --shadow:0 22px 60px rgba(0,0,0,.28);
+  --bg:#08111f;
+  --bg2:#0d1b2e;
+  --card:#101f33;
+  --text:#f6f8fc;
+  --muted:#aab8ca;
+  --accent:#62d7ff;
+  --accent2:#8b7cff;
+  --line:rgba(255,255,255,.10);
+  --shadow:0 22px 60px rgba(0,0,0,.28);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,Segoe UI,Arial,sans-serif;background:#f5f7fb;color:#101827;line-height:1.6}
-a{text-decoration:none;color:inherit}
-.container{width:min(1120px,92%);margin:auto}
-.nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(8,17,31,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
-.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:900;letter-spacing:1.5px;color:white;font-size:18px}
-.logo span{color:var(--accent)}
-.nav-links{display:flex;gap:28px;color:#dce6f2;font-size:14px}.menu-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.16);color:#fff;border-radius:9px;padding:7px 10px;font-size:18px}
-.nav-links a:hover{color:var(--accent)}
-.nav-btn{padding:10px 16px;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#fff;font-weight:700}
-.hero{min-height:760px;padding:150px 0 90px;background:
-radial-gradient(circle at 78% 30%,rgba(98,215,255,.18),transparent 30%),
-radial-gradient(circle at 20% 70%,rgba(139,124,255,.16),transparent 28%),var(--bg);color:white;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
-.badge{display:inline-flex;padding:8px 13px;border:1px solid rgba(98,215,255,.25);border-radius:999px;background:rgba(98,215,255,.08);color:#a9eaff;font-size:13px;font-weight:700;margin-bottom:22px}
-h1{font-size:clamp(48px,7vw,84px);line-height:.98;letter-spacing:-4px;max-width:760px}
-.gradient{background:linear-gradient(100deg,#fff,#8fe5ff 48%,#a99cff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{font-size:19px;color:var(--muted);max-width:610px;margin:25px 0 32px}
-.actions{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;font-weight:800;border:1px solid var(--line);transition:.25s}
-.btn.primary{background:white;color:#09111d}
-.btn.secondary{color:white;background:rgba(255,255,255,.05)}
-.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.25)}
-.hero-card{position:relative}
-.glow{position:absolute;inset:10% -5%;background:linear-gradient(135deg,rgba(98,215,255,.18),rgba(139,124,255,.18));filter:blur(50px)}
-.browser{position:relative;background:#f8fafc;border-radius:22px;padding:12px;box-shadow:var(--shadow);transform:rotate(2deg)}
-.browser-top{height:30px;display:flex;gap:6px;align-items:center;padding:0 8px}
-.dot{width:8px;height:8px;border-radius:50%;background:#c9d1dc}
-.mock{border-radius:14px;background:linear-gradient(145deg,#132b47,#071321);min-height:380px;padding:30px;color:white;overflow:hidden}
-.mock small{color:#8fdfff}.mock h3{font-size:34px;line-height:1.05;margin:65px 0 15px}.mock .bar{height:10px;width:65%;border-radius:99px;background:#243f5d;margin:10px 0}.mock .cta{display:inline-block;margin-top:20px;padding:10px 15px;background:#fff;color:#101827;border-radius:9px;font-weight:800}
-.section{padding:105px 0}
-.section.dark{background:var(--bg);color:white}
-.section-head{text-align:center;max-width:700px;margin:0 auto 55px}
-.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:900;color:#63748a;margin-bottom:10px}
-.dark .eyebrow{color:#72dfff}
-h2{font-size:clamp(34px,5vw,56px);line-height:1.05;letter-spacing:-2px}
-.section-head p{margin-top:15px;color:#667589}
-.dark .section-head p{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:white;border:1px solid #e7ebf2;border-radius:20px;overflow:hidden;box-shadow:0 14px 35px rgba(22,37,58,.07);transition:.25s}
-.card:hover{transform:translateY(-7px);box-shadow:0 24px 50px rgba(22,37,58,.13)}
-.preview{height:205px;padding:16px;background:#eaf0f7}
-.preview-window{height:100%;border-radius:12px;background:#fff;overflow:hidden;border:1px solid #dce3ec}
-.pnav{height:27px;background:#122b45}.pizza{height:100%;padding:20px;background:linear-gradient(135deg,#fff3e5,#ffe0b4);position:relative}.pizza h4{font-size:25px}.pizza-circle{position:absolute;width:90px;height:90px;border-radius:50%;right:25px;top:42px;background:radial-gradient(circle,#f8c85b 0 28%,#d95c35 29% 38%,#e8a64e 39% 100%);box-shadow:0 8px 18px #c87b4a66}
-.menu{padding:18px}.menu-line{height:12px;background:#e9edf3;border-radius:6px;margin:8px 0}.menu-line.short{width:55%}
-.contact-mock{padding:25px}.contact-mock h4{font-size:24px;margin-bottom:15px}.contact-box{height:14px;background:#edf0f4;border-radius:6px;margin:10px 0}.contact-box.big{height:55px}
-.card-body{padding:24px}.project-link{display:inline-block;margin-top:18px;font-weight:900;color:#16496e}.project-link:hover{text-decoration:underline}.card h3{font-size:23px}.card p{color:#68778a;margin:8px 0 18px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tag{font-size:11px;font-weight:800;padding:5px 8px;background:#eef5fa;border-radius:999px;color:#2a516c}
-.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.service{padding:26px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035)}
-.icon{font-size:27px;margin-bottom:20px}.service h3{margin-bottom:8px}.service p{color:var(--muted);font-size:14px}
-.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
-.about-box{padding:35px;border-radius:24px;background:linear-gradient(145deg,#10253c,#091525);color:white;box-shadow:var(--shadow)}
-.about-box .big{font-size:64px;font-weight:900;line-height:1}.about-box p{color:#aebed0;margin-top:12px}
-.about-text p{color:#617084;margin:18px 0}.check{margin:12px 0;font-weight:700}.check span{color:#19a36f;margin-right:8px}
-.skills{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}.skill{padding:12px 17px;border:1px solid #dfe5ed;border-radius:999px;font-weight:800;background:#fff}
-.contact{background:linear-gradient(135deg,#091525,#122a46);color:white;border-radius:28px;padding:55px}
-.contact-grid{display:grid;grid-template-columns:1fr .9fr;gap:50px;align-items:center}.contact p{color:#aebed0;margin:15px 0 25px}
-form{display:grid;gap:12px}input,textarea,select{width:100%;padding:14px 15px;border:1px solid rgba(255,255,255,.13);border-radius:11px;background:rgba(255,255,255,.06);color:white;font:inherit;outline:none}select option{color:#111;background:#fff}.contact-note{display:inline-block;padding:10px 13px;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#c6d5e5;font-size:13px}.form-status{min-height:20px;color:#8fe5ff;font-size:13px;font-weight:700}textarea{min-height:120px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:#62d7ff}
-footer{background:#060e19;color:#91a1b5;padding:30px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
-@media(max-width:850px){.nav-links{display:none;position:absolute;top:72px;left:4%;right:4%;padding:16px;flex-direction:column;gap:5px;background:#0b1728;border:1px solid rgba(255,255,255,.1);border-radius:14px;box-shadow:0 20px 40px rgba(0,0,0,.25)}.nav-links.open{display:flex}.nav-links a{padding:10px 8px}.menu-toggle{display:block}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero{min-height:auto}.cards{grid-template-columns:1fr 1fr}.services{grid-template-columns:1fr 1fr}.hero-card{max-width:650px;margin:auto}}
-@media(max-width:560px){h1{letter-spacing:-2.5px}.section{padding:75px 0}.cards,.services{grid-template-columns:1fr}.contact{padding:32px 22px}.mock{min-height:300px}.browser{transform:none}}
 
-.studio-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.studio-gallery figure{margin:0;background:#fff;border:1px solid #e7ebf2;border-radius:20px;padding:10px;box-shadow:0 14px 35px rgba(22,37,58,.07);overflow:hidden}
-.studio-gallery img{display:block;width:100%;height:auto;border-radius:14px}
-.studio-gallery figcaption{padding:11px 8px 4px;font-weight:800;color:#30445a}
-@media(max-width:800px){.studio-gallery{grid-template-columns:1fr}}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:#f5f7fb;
+  color:#101827;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:20;
+  background:rgba(8,17,31,.78);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  font-weight:900;
+  letter-spacing:1.5px;
+  color:white;
+  font-size:18px;
+}
+
+.logo span{
+  color:var(--accent);
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  color:#dce6f2;
+  font-size:14px;
+}
+
+.menu-toggle{
+  display:none;
+  background:none;
+  border:1px solid rgba(255,255,255,.16);
+  color:#fff;
+  border-radius:9px;
+  padding:7px 10px;
+  font-size:18px;
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+}
+
+.nav-btn{
+  padding:10px 16px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;
+  color:#fff;
+  font-weight:700;
+}
+
+.hero{
+  min-height:760px;
+  padding:150px 0 90px;
+  background:
+    radial-gradient(circle at 78% 30%,rgba(98,215,255,.18),transparent 30%),
+    radial-gradient(circle at 20% 70%,rgba(139,124,255,.16),transparent 28%),
+    var(--bg);
+  color:white;
+  overflow:hidden;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:70px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-flex;
+  padding:8px 13px;
+  border:1px solid rgba(98,215,255,.25);
+  border-radius:999px;
+  background:rgba(98,215,255,.08);
+  color:#a9eaff;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:22px;
+}
+
+h1{
+  font-size:clamp(48px,7vw,84px);
+  line-height:.98;
+  letter-spacing:-4px;
+  max-width:760px;
+}
+
+.gradient{
+  background:linear-gradient(100deg,#fff,#8fe5ff 48%,#a99cff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+.hero p{
+  font-size:19px;
+  color:var(--muted);
+  max-width:610px;
+  margin:25px 0 32px;
+}
+
+.actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 20px;
+  border-radius:12px;
+  font-weight:800;
+  border:1px solid var(--line);
+  transition:.25s;
+}
+
+.btn.primary{
+  background:white;
+  color:#09111d;
+}
+
+.btn.secondary{
+  color:white;
+  background:rgba(255,255,255,.05);
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+.hero-card{
+  position:relative;
+}
+
+.glow{
+  position:absolute;
+  inset:10% -5%;
+  background:linear-gradient(
+    135deg,
+    rgba(98,215,255,.18),
+    rgba(139,124,255,.18)
+  );
+  filter:blur(50px);
+}
+
+.browser{
+  position:relative;
+  background:#f8fafc;
+  border-radius:22px;
+  padding:12px;
+  box-shadow:var(--shadow);
+  transform:rotate(2deg);
+}
+
+.browser-top{
+  height:30px;
+  display:flex;
+  gap:6px;
+  align-items:center;
+  padding:0 8px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#c9d1dc;
+}
+
+.mock{
+  border-radius:14px;
+  background:linear-gradient(145deg,#132b47,#071321);
+  min-height:380px;
+  padding:30px;
+  color:white;
+  overflow:hidden;
+}
+
+.mock small{
+  color:#8fdfff;
+}
+
+.mock h3{
+  font-size:34px;
+  line-height:1.05;
+  margin:65px 0 15px;
+}
+
+.mock .bar{
+  height:10px;
+  width:65%;
+  border-radius:99px;
+  background:#243f5d;
+  margin:10px 0;
+}
+
+.mock .cta{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 15px;
+  background:#fff;
+  color:#101827;
+  border-radius:9px;
+  font-weight:800;
+}
+
+.section{
+  padding:105px 0;
+}
+
+.section.dark{
+  background:var(--bg);
+  color:white;
+}
+
+.section-head{
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 55px;
+}
+
+.eyebrow{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:900;
+  color:#63748a;
+  margin-bottom:10px;
+}
+
+.dark .eyebrow{
+  color:#72dfff;
+}
+
+h2{
+  font-size:clamp(34px,5vw,56px);
+  line-height:1.05;
+  letter-spacing:-2px;
+}
+
+.section-head p{
+  margin-top:15px;
+  color:#667589;
+}
+
+.dark .section-head p{
+  color:var(--muted);
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.card{
+  background:white;
+  border:1px solid #e7ebf2;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 14px 35px rgba(22,37,58,.07);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 24px 50px rgba(22,37,58,.13);
+}
+
+.preview{
+  height:205px;
+  padding:16px;
+  background:#eaf0f7;
+}
+
+.preview-window{
+  height:100%;
+  border-radius:12px;
+  background:#fff;
+  overflow:hidden;
+  border:1px solid #dce3ec;
+}
+
+.pnav{
+  height:27px;
+  background:#122b45;
+}
+
+.pizza{
+  height:100%;
+  padding:20px;
+  background:linear-gradient(135deg,#fff3e5,#ffe0b4);
+  position:relative;
+}
+
+.pizza h4{
+  font-size:25px;
+}
+
+.pizza-circle{
+  position:absolute;
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  right:25px;
+  top:42px;
+  background:radial-gradient(
+    circle,
+    #f8c85b 0 28%,
+    #d95c35 29% 38%,
+    #e8a64e 39% 100%
+  );
+  box-shadow:0 8px 18px #c87b4a66;
+}
+
+.menu{
+  padding:18px;
+}
+
+.menu-line{
+  height:12px;
+  background:#e9edf3;
+  border-radius:6px;
+  margin:8px 0;
+}
+
+.menu-line.short{
+  width:55%;
+}
+
+.contact-mock{
+  padding:25px;
+}
+
+.contact-mock h4{
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+.contact-box{
+  height:14px;
+  background:#edf0f4;
+  border-radius:6px;
+  margin:10px 0;
+}
+
+.contact-box.big{
+  height:55px;
+}
+
+.card-body{
+  padding:24px;
+}
+
+.project-link{
+  display:inline-block;
+  margin-top:18px;
+  font-weight:900;
+  color:#16496e;
+}
+
+.project-link:hover{
+  text-decoration:underline;
+}
+
+.card h3{
+  font-size:23px;
+}
+
+.card p{
+  color:#68778a;
+  margin:8px 0 18px;
+}
+
+.tags{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.tag{
+  font-size:11px;
+  font-weight:800;
+  padding:5px 8px;
+  background:#eef5fa;
+  border-radius:999px;
+  color:#2a516c;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+
+.service{
+  padding:26px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:rgba(255,255,255,.035);
+}
+
+.icon{
+  font-size:27px;
+  margin-bottom:20px;
+}
+
+.service h3{
+  margin-bottom:8px;
+}
+
+.service p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:70px;
+  align-items:center;
+}
+
+.about-box{
+  padding:35px;
+  border-radius:24px;
+  background:linear-gradient(145deg,#10253c,#091525);
+  color:white;
+  box-shadow:var(--shadow);
+}
+
+.about-box .big{
+  font-size:64px;
+  font-weight:900;
+  line-height:1;
+}
+
+.about-box p{
+  color:#aebed0;
+  margin-top:12px;
+}
+
+.about-text p{
+  color:#617084;
+  margin:18px 0;
+}
+
+.check{
+  margin:12px 0;
+  font-weight:700;
+}
+
+.check span{
+  color:#19a36f;
+  margin-right:8px;
+}
+
+.skills{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.skill{
+  padding:12px 17px;
+  border:1px solid #dfe5ed;
+  border-radius:999px;
+  font-weight:800;
+  background:#fff;
+}
+
+.contact{
+  background:linear-gradient(135deg,#091525,#122a46);
+  color:white;
+  border-radius:28px;
+  padding:55px;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr .9fr;
+  gap:50px;
+  align-items:center;
+}
+
+.contact p{
+  color:#aebed0;
+  margin:15px 0 25px;
+}
+
+form{
+  display:grid;
+  gap:12px;
+}
+
+input,
+textarea,
+select{
+  width:100%;
+  padding:14px 15px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:11px;
+  background:rgba(255,255,255,.06);
+  color:white;
+  font:inherit;
+  outline:none;
+}
+
+select option{
+  color:#111;
+  background:#fff;
+}
+
+.contact-note{
+  display:inline-block;
+  padding:10px 13px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:10px;
+  color:#c6d5e5;
+  font-size:13px;
+}
+
+.form-status{
+  min-height:20px;
+  color:#8fe5ff;
+  font-size:13px;
+  font-weight:700;
+}
+
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  border-color:#62d7ff;
+}
+
+.studio-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.studio-gallery figure{
+  margin:0;
+  background:#fff;
+  border:1px solid #e7ebf2;
+  border-radius:20px;
+  padding:10px;
+  box-shadow:0 14px 35px rgba(22,37,58,.07);
+  overflow:hidden;
+}
+
+.studio-gallery img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:14px;
+}
+
+.studio-gallery figcaption{
+  padding:11px 8px 4px;
+  font-weight:800;
+  color:#30445a;
+}
+
+footer{
+  background:#060e19;
+  color:#91a1b5;
+  padding:30px 0;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  font-size:13px;
+}
+
+@media(max-width:850px){
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:4%;
+    right:4%;
+    padding:16px;
+    flex-direction:column;
+    gap:5px;
+    background:#0b1728;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:14px;
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .nav-links a{
+    padding:10px 8px;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:auto;
+  }
+
+  .cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .services{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero-card{
+    max-width:650px;
+    margin:auto;
+  }
+}
+
+@media(max-width:800px){
+
+  .studio-gallery{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:560px){
+
+  h1{
+    letter-spacing:-2.5px;
+  }
+
+  .section{
+    padding:75px 0;
+  }
+
+  .cards,
+  .services{
+    grid-template-columns:1fr;
+  }
+
+  .contact{
+    padding:32px 22px;
+  }
+
+  .mock{
+    min-height:300px;
+  }
+
+  .browser{
+    transform:none;
+  }
+
+}
 </style>
 </head>
+
 <body>
+
 <nav class="nav">
   <div class="container nav-inner">
-    <a class="logo" href="#home">AYAN<span>.</span></a>
+
+    <a class="logo" href="#home">
+      AYAN<span>.</span>
+    </a>
+
     <div class="nav-links" id="navLinks">
-      <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
     </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
-    <a class="nav-btn" href="#contact">Let's Talk</a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open menu"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <a class="nav-btn" href="#contact">
+      Let's Talk
+    </a>
+
   </div>
 </nav>
 
+
 <header class="hero" id="home">
+
   <div class="container hero-grid">
+
     <div>
-      <div class="badge">✦ AYAN DIGITAL STUDIO</div>
-      <h1>Ideas into <span class="gradient">digital experiences.</span></h1>
-      <p>I create modern websites, clean designs and creative digital projects that look great on every screen.</p>
-      <div class="actions"><a class="btn primary" href="#work">Explore My Work →</a><a class="btn secondary" href="#contact">Start a Project</a></div>
+
+      <div class="badge">
+        ✦ AYAN DIGITAL STUDIO
+      </div>
+
+      <h1>
+        Ideas into
+        <span class="gradient">
+          digital experiences.
+        </span>
+      </h1>
+
+      <p>
+        I create modern websites, clean designs and creative digital projects
+        that look great on every screen.
+      </p>
+
+      <div class="actions">
+
+        <a class="btn primary" href="#work">
+          Explore My Work →
+        </a>
+
+        <a class="btn secondary" href="#contact">
+          Start a Project
+        </a>
+
+      </div>
+
     </div>
-    <div class="hero-card"><div class="glow"></div><div class="browser"><div class="browser-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div><div class="mock"><small>ROYAL PIZZA / FEATURED PROJECT</small><h3>Fresh ideas.<br>Fresh design.</h3><div class="bar"></div><div class="bar" style="width:45%"></div><span class="cta">View Project</span></div></div></div>
+
+
+    <div class="hero-card">
+
+      <div class="glow"></div>
+
+      <div class="browser">
+
+        <div class="browser-top">
+          <i class="dot"></i>
+          <i class="dot"></i>
+          <i class="dot"></i>
+        </div>
+
+        <div class="mock">
+
+          <small>
+            ROYAL PIZZA / FEATURED PROJECT
+          </small>
+
+          <h3>
+            Fresh ideas.<br>
+            Fresh design.
+          </h3>
+
+          <div class="bar"></div>
+          <div class="bar" style="width:45%"></div>
+
+          <span class="cta">
+            View Project
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </header>
 
+
 <section class="section" id="work">
+
   <div class="container">
-    <div class="section-head"><div class="eyebrow">Selected work</div><h2>Projects that make an impression.</h2><p>A growing collection of websites and creative work from Ayan Digital Studio.</p></div>
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Selected work
+      </div>
+
+      <h2>
+        Projects that make an impression.
+      </h2>
+
+      <p>
+        A growing collection of websites and creative work from Ayan Digital Studio.
+      </p>
+
+    </div>
+
+
     <div class="cards">
-      <article class="card"><div class="preview"><img src="royal-pizza-projects.png" alt="Royal Pizza website project preview" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block"></div><div class="card-body"><h3>Royal Pizza Website</h3><a class="btn secondary project-link" href="royal-pizza-website.html" style="margin:8px 0 15px;color:#101827;border-color:#dfe5ed">View Project →</a><p>A complete restaurant website concept with a bold food-focused design.</p><div class="tags"><span class="tag">Website</span><span class="tag">UI Design</span><span class="tag">Responsive</span></div><a href="royal-pizza-website.html" style="display:inline-block;margin-top:18px;font-weight:900;color:#164a70">View Project →</a><a class="project-link" href="royal-pizza-website.html">View Project →</a></div></article>
-      <article class="card"><div class="preview"><img src="royal-pizza-projects.png" alt="Royal Pizza menu project preview" style="width:100%;height:100%;object-fit:cover;object-position:right top;border-radius:12px;display:block"></div><div class="card-body"><h3>Royal Pizza Menu</h3><a class="btn secondary project-link" href="royal-pizza-menu.html" style="margin:8px 0 15px;color:#101827;border-color:#dfe5ed">View Project →</a><p>A clean menu experience designed to make food choices simple and attractive.</p><div class="tags"><span class="tag">Design</span><span class="tag">Menu</span><span class="tag">UI</span></div><a href="royal-pizza-menu.html" style="display:inline-block;margin-top:18px;font-weight:900;color:#164a70">View Project →</a><a class="project-link" href="royal-pizza-menu.html">View Project →</a></div></article>
-      <article class="card"><div class="preview"><img src="royal-pizza-projects.png" alt="Royal Pizza customer feedback project preview" style="width:100%;height:100%;object-fit:cover;object-position:left bottom;border-radius:12px;display:block"></div><div class="card-body"><h3>Customer Feedback</h3><a class="btn secondary project-link" href="customer-feedback.html" style="margin:8px 0 15px;color:#101827;border-color:#dfe5ed">View Project →</a><p>A polished feedback and contact experience for the Royal Pizza project.</p><div class="tags"><span class="tag">UX</span><span class="tag">Forms</span><span class="tag">Web</span></div><a href="customer-feedback.html" style="display:inline-block;margin-top:18px;font-weight:900;color:#164a70">View Project →</a><a class="project-link" href="customer-feedback.html">View Project →</a></div></article>
-    <article class="card">
-  <div class="preview">
-    <img src="gaming-poster-sample.png"
-         alt="Gaming poster design sample"
-         style="width:100%;height:100%;object-fit:cover;">
-  </div>
-  <div class="card-body">
-    <div class="eyebrow">Graphic Design</div>
-    <h3>Gaming Poster Design</h3>
-    <p>Cinematic gaming poster and banner design for gaming brands and creators.</p>
-  </div>
-</article>
+
+
+      <!-- ROYAL PIZZA WEBSITE -->
+
+      <article class="card">
+
+        <div class="preview">
+
+          <img
+            src="royal-pizza-projects.png"
+            alt="Royal Pizza website project preview"
+            style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block">
+
+        </div>
+
+        <div class="card-body">
+
+          <h3>
+            Royal Pizza Website
+          </h3>
+
+          <a
+            class="btn secondary project-link"
+            href="royal-pizza-website.html"
+            style="margin:8px 0 15px;color:#101827;border-color:#dfe5ed">
+
+            View Project →
+
+          </a>
+
+          <p>
+            A complete restaurant website concept with a bold food-focused design.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Website</span>
+            <span class="tag">UI Design</span>
+            <span class="tag">Responsive</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ROYAL PIZZA MENU -->
+
+      <article class="card">
+
+        <div class="preview">
+
+          <img
+            src="royal-pizza-projects.png"
+            alt="Royal Pizza menu project preview"
+            style="width:100%;height:100%;object-fit:cover;object-position:right top;border-radius:12px;display:block">
+
+        </div>
+
+        <div class="card-body">
+
+          <h3>
+            Royal Pizza Menu
+          </h3>
+
+          <a
+            class="btn secondary project-link"
+            href="royal-pizza-menu.html"
+            style="margin:8px 0 15px;color:#101827;border-color:#dfe5ed">
+
+            View Project →
+
+          </a>
+
+          <p>
+            A clean menu experience designed to make food choices simple and attractive.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Design</span>
+            <span class="tag">Menu</span>
+            <span class="tag">UI</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- CUSTOMER FEEDBACK -->
+
+      <article class="card">
+
+        <div class="preview">
+
+          <img
+            src="royal-pizza-projects.png"
+            alt="Royal Pizza customer feedback project preview"
+            style="width:100%;height:100%;object-fit:cover;object-position:left bottom;border-radius:12px;display:block">
+
+        </div>
+
+        <div class="card-body">
+
+          <h3>
+            Customer Feedback
+          </h3>
+
+          <a
+            class="btn secondary project-link"
+            href="customer-feedback.html"
+            style="margin:8px 0 15px;color:#101827;border-color:#dfe5ed">
+
+            View Project →
+
+          </a>
+
+          <p>
+            A polished feedback and contact experience for the Royal Pizza project.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">UX</span>
+            <span class="tag">Forms</span>
+            <span class="tag">Web</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- GAMING POSTER -->
+
+      <article class="card">
+
+        <div class="preview">
+
+          <img
+            src="gaming-poster-sample.png"
+            alt="Gaming poster design sample"
+            style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:block">
+
+        </div>
+
+        <div class="card-body">
+
+          <div class="eyebrow">
+            Graphic Design
+          </div>
+
+          <h3>
+            Gaming Poster Design
+          </h3>
+
+          <p>
+            Cinematic gaming poster and banner design for gaming brands and creators.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Gaming</span>
+            <span class="tag">Poster</span>
+            <span class="tag">Graphic Design</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
     </div>
+
   </div>
+
 </section>
+
+
 <section class="section" id="project-gallery">
+
   <div class="container">
-    <div class="section-head"><div class="eyebrow">Royal Pizza gallery</div><h2>See the website screens.</h2><p>The actual Royal Pizza screenshots are included below as part of the portfolio.</p></div>
-    <div class="studio-gallery">
-      <figure><img src="assets/royal-pizza-home.png" alt="Royal Pizza home page"><figcaption>Home</figcaption></figure>
-      <figure><img src="assets/royal-pizza-menu.png" alt="Royal Pizza menu"><figcaption>Menu</figcaption></figure>
-      <figure><img src="assets/royal-pizza-feedback.png" alt="Royal Pizza customer feedback"><figcaption>Feedback</figcaption></figure>
-      <figure><img src="assets/royal-pizza-contact.png" alt="Royal Pizza contact"><figcaption>Contact</figcaption></figure>
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Royal Pizza gallery
+      </div>
+
+      <h2>
+        See the website screens.
+      </h2>
+
+      <p>
+        The actual Royal Pizza screenshots are included below as part of the portfolio.
+      </p>
+
     </div>
+
+
+    <div class="studio-gallery">
+
+      <figure>
+
+        <img
+          src="assets/royal-pizza-home.png"
+          alt="Royal Pizza home page">
+
+        <figcaption>
+          Home
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="assets/royal-pizza-menu.png"
+          alt="Royal Pizza menu">
+
+        <figcaption>
+          Menu
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="assets/royal-pizza-feedback.png"
+          alt="Royal Pizza customer feedback">
+
+        <figcaption>
+          Feedback
+        </figcaption>
+
+      </figure>
+
+
+      <figure>
+
+        <img
+          src="assets/royal-pizza-contact.png"
+          alt="Royal Pizza contact">
+
+        <figcaption>
+          Contact
+        </figcaption>
+
+      </figure>
+
+    </div>
+
   </div>
+
 </section>
 
 
 <section class="section dark" id="services">
+
   <div class="container">
-    <div class="section-head"><div class="eyebrow">What I do</div><h2>Creative, useful and built to stand out.</h2><p>From first idea to final screen, every project gets a clean and thoughtful approach.</p></div>
-    <div class="services">
-      <div class="service"><div class="icon">⌘</div><h3>Web Development</h3><p>Responsive websites with clean structure and smooth user experiences.</p></div>
-      <div class="service"><div class="icon">✦</div><h3>UI Design</h3><p>Modern layouts, typography and interfaces that feel easy to use.</p></div>
-      <div class="service"><div class="icon">▣</div><h3>Graphic Design</h3><p>Posters, pamphlets, banners and other digital design work.</p></div>
-      <div class="service"><div class="icon">◈</div><h3>Creative Projects</h3><p>Original digital concepts built around interesting ideas and themes.</p></div>
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        What I do
+      </div>
+
+      <h2>
+        Creative, useful and built to stand out.
+      </h2>
+
+      <p>
+        From first idea to final screen, every project gets a clean and thoughtful approach.
+      </p>
+
     </div>
+
+
+    <div class="services">
+
+      <div class="service">
+
+        <div class="icon">⌘</div>
+
+        <h3>
+          Web Development
+        </h3>
+
+        <p>
+          Responsive websites with clean structure and smooth user experiences.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="icon">✦</div>
+
+        <h3>
+          UI Design
+        </h3>
+
+        <p>
+          Modern layouts, typography and interfaces that feel easy to use.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="icon">▣</div>
+
+        <h3>
+          Graphic Design
+        </h3>
+
+        <p>
+          Posters, pamphlets, banners and other digital design work.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="icon">◈</div>
+
+        <h3>
+          Creative Projects
+        </h3>
+
+        <p>
+          Original digital concepts built around interesting ideas and themes.
+        </p>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
+
 
 <section class="section" id="about">
+
   <div class="container about-grid">
-    <div class="about-box"><div class="big">01</div><p>Think. Design. Build. Improve.</p></div>
-    <div class="about-text"><div class="eyebrow">About the studio</div><h2>Small studio. Big ideas.</h2><p>Ayan Digital Studio is a personal creative studio focused on websites, digital design and experimental projects.</p><div class="check"><span>✓</span>Clean and modern design</div><div class="check"><span>✓</span>Responsive layouts</div><div class="check"><span>✓</span>Attention to detail</div></div>
+
+    <div class="about-box">
+
+      <div class="big">
+        01
+      </div>
+
+      <p>
+        Think. Design. Build. Improve.
+      </p>
+
+    </div>
+
+
+    <div class="about-text">
+
+      <div class="eyebrow">
+        About the studio
+      </div>
+
+      <h2>
+        Small studio. Big ideas.
+      </h2>
+
+      <p>
+        Ayan Digital Studio is a personal creative studio focused on websites,
+        digital design and experimental projects.
+      </p>
+
+      <div class="check">
+        <span>✓</span>
+        Clean and modern design
+      </div>
+
+      <div class="check">
+        <span>✓</span>
+        Responsive layouts
+      </div>
+
+      <div class="check">
+        <span>✓</span>
+        Attention to detail
+      </div>
+
+    </div>
+
   </div>
+
 </section>
+
 
 <section class="section" style="padding-top:20px">
-  <div class="container"><div class="section-head"><div class="eyebrow">Toolkit</div><h2>Skills & tools</h2></div><div class="skills"><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill">Responsive Design</span><span class="skill">UI Design</span><span class="skill">Creative Design</span></div></div>
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="eyebrow">
+        Toolkit
+      </div>
+
+      <h2>
+        Skills & tools
+      </h2>
+
+    </div>
+
+
+    <div class="skills">
+
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">Responsive Design</span>
+      <span class="skill">UI Design</span>
+      <span class="skill">Creative Design</span>
+
+    </div>
+
+  </div>
+
 </section>
+
 
 <section class="section" id="contact">
+
   <div class="container">
+
     <div class="contact">
+
       <div class="contact-grid">
+
+
         <div>
-          <div class="eyebrow">Get in touch</div>
-          <h2>Have an idea?<br>Let's build it.</h2>
-          <p>Send a project brief and the studio will prepare an email draft with your details. No information is sent anywhere until you choose to send it.</p>
-          <div class="contact-note">✦ Your message stays in your email app until you send it.</div>
+
+          <div class="eyebrow">
+            Get in touch
+          </div>
+
+          <h2>
+            Have an idea?<br>
+            Let's build it.
+          </h2>
+
+          <p>
+            Send a project brief and the studio will prepare an email draft
+            with your details. No information is sent anywhere until you
+            choose to send it.
+          </p>
+
+          <div class="contact-note">
+            ✦ Your message stays in your email app until you send it.
+          </div>
+
         </div>
+
+
         <form id="contactForm">
-          <input id="name" required maxlength="80" placeholder="Your name">
-          <input id="email" required type="email" maxlength="120" placeholder="Your email">
+
+          <input
+            id="name"
+            required
+            maxlength="80"
+            placeholder="Your name">
+
+          <input
+            id="email"
+            required
+            type="email"
+            maxlength="120"
+            placeholder="Your email">
+
           <select id="type" required>
-            <option value="">What do you need?</option>
-            <option>Website</option><option>UI / Design</option><option>Graphic Design</option><option>Creative Project</option>
+
+            <option value="">
+              What do you need?
+            </option>
+
+            <option>
+              Website
+            </option>
+
+            <option>
+              UI / Design
+            </option>
+
+            <option>
+              Graphic Design
+            </option>
+
+            <option>
+              Creative Project
+            </option>
+
           </select>
-          <textarea id="message" required maxlength="1200" placeholder="Tell me about your project..."></textarea>
-          <button class="btn primary" type="submit">Send Enquiry →</button>
-          <div id="formStatus" class="form-status" role="status"></div>
+
+
+          <textarea
+            id="message"
+            required
+            maxlength="1200"
+            placeholder="Tell me about your project..."></textarea>
+
+
+          <button
+            class="btn primary"
+            type="submit">
+
+            Send Enquiry →
+
+          </button>
+
+
+          <div
+            id="formStatus"
+            class="form-status"
+            role="status">
+          </div>
+
         </form>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
 
-<footer><div class="container footer-inner"><span>© 2026 Ayan Digital Studio</span><span>Websites • Designs • Creative Projects</span><span>Built with care • Ready to publish</span></div></footer>
-<script>
-const STUDIO_EMAIL = "ayandigitalstudiocustomer@gmail.com"; // Add your real email here before publishing.
-document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const type = document.getElementById("type").value;
-  const message = document.getElementById("message").value.trim();
-  const subject = encodeURIComponent("New project enquiry — " + type);
-  const body = encodeURIComponent(
-    const body = encodeURIComponent(
-  "Name: " + name + "\n" +
-  "Email: " + email + "\n" +
-  "Project type: " + type + "\n\n" +
-  message
-);
-    "Email: " + email + "
-" +
-    "Project type: " + type + "
 
-" +
-    message
-  );
-  document.getElementById("formStatus").textContent = "Opening your email app…";
-  window.location.href = "mailto:" + STUDIO_EMAIL + "?subject=" + subject + "&body=" + body;
+<footer>
+
+  <div class="container footer-inner">
+
+    <span>
+      © 2026 Ayan Digital Studio
+    </span>
+
+    <span>
+      Websites • Designs • Creative Projects
+    </span>
+
+    <span>
+      Built with care • Ready to publish
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+const STUDIO_EMAIL = "ayandigitalstudiocustomer@gmail.com";
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  const name =
+    document.getElementById("name").value.trim();
+
+  const email =
+    document.getElementById("email").value.trim();
+
+  const type =
+    document.getElementById("type").value;
+
+  const message =
+    document.getElementById("message").value.trim();
+
+
+  const subject =
+    encodeURIComponent(
+      "New project enquiry — " + type
+    );
+
+
+  const body =
+    encodeURIComponent(
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n" +
+      "Project type: " + type + "\n\n" +
+      message
+    );
+
+
+  document.getElementById("formStatus").textContent =
+    "Opening your email app…";
+
+
+  window.location.href =
+    "mailto:" +
+    STUDIO_EMAIL +
+    "?subject=" +
+    subject +
+    "&body=" +
+    body;
+
 });
-const toggle = document.getElementById("menuToggle");
-const nav = document.getElementById("navLinks");
+
+
+const toggle =
+  document.getElementById("menuToggle");
+
+const nav =
+  document.getElementById("navLinks");
+
+
 toggle?.addEventListener("click", () => {
-  const open = nav.classList.toggle("open");
-  toggle.setAttribute("aria-expanded", open ? "true" : "false");
+
+  const open =
+    nav.classList.toggle("open");
+
+  toggle.setAttribute(
+    "aria-expanded",
+    open ? "true" : "false"
+  );
+
 });
-nav?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
+
+
+nav?.querySelectorAll("a").forEach(a => {
+
+  a.addEventListener("click", () => {
+
+    nav.classList.remove("open");
+
+  });
+
+});
+
 </script>
+
 </body>
 </html>
