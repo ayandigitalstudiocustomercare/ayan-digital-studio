@@ -5,3 +5,11 @@
 .gallery-item img{display:block;width:100%;height:auto;border-radius:12px}
 .gallery-item figcaption{padding:12px 8px 5px;font-weight:800;color:#30445a;font-size:14px}
 @media(max-width:800px){.gallery{grid-template-columns:1fr}}
+.phone-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
