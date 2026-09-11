@@ -574,14 +574,84 @@
       min-height:150px;
       resize:vertical;
     }
-    <style>
+    /* =========================
+   WELCOME MESSAGE
+========================= */
 
-  /* lots of your existing CSS */
+.site-message{
+  position:fixed;
+  top:95px;
+  right:25px;
+  z-index:2000;
+  max-width:360px;
+  padding:18px 20px;
+  border-radius:14px;
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+  animation:messageIn .4s ease;
+}
+
+.welcome-message{
+  background:#102b42;
+  border:1px solid #67ddff;
+  color:white;
+}
+
+.site-message strong{
+  display:block;
+  margin-bottom:4px;
+}
+
+.site-message span{
+  color:#b8c9d9;
+  font-size:13px;
+}
+
+@keyframes messageIn{
+  from{
+    opacity:0;
+    transform:translateY(-15px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 
   .contact-form textarea{
     min-height:150px;
     resize:vertical;
   }
+    .site-message{
+  position:fixed;
+  top:95px;
+  right:25px;
+  z-index:2000;
+  max-width:360px;
+  padding:18px 20px;
+  border-radius:14px;
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+  animation:messageIn .4s ease;
+}
+
+.welcome-message{
+  background:#102b42;
+  border:1px solid #67ddff;
+  color:white;
+}
+
+.site-message strong{
+  display:block;
+  margin-bottom:4px;
+}
+
+.site-message span{
+  color:#b8c9d9;
+  font-size:13px;
+}
+
+}
 
   /* NEW SERVICE OPTIONS */
 
@@ -597,9 +667,7 @@
     margin-bottom:2px;
   }
 
-  /* rest of the new CSS */
 
-</style>
     
 
     /* =========================
@@ -728,6 +796,33 @@
 </head>
 
 <body>
+  <!-- WELCOME MESSAGE -->
+<div id="welcomeMessage" class="site-message welcome-message">
+  <strong>Welcome to AYAN DIGITAL STUDIO! 👋</strong>
+  <span>Let's turn your ideas into something amazing.</span>
+</div>
+  /* FORM MESSAGES */
+
+.form-message{
+  display:none;
+  padding:13px 15px;
+  border-radius:9px;
+  margin-bottom:14px;
+  font-size:14px;
+  font-weight:700;
+}
+
+.form-warning{
+  background:#3a2410;
+  border:1px solid #f0a43c;
+  color:#ffd08a;
+}
+
+.form-success{
+  background:#10351f;
+  border:1px solid #4ade80;
+  color:#9af0b5;
+}
 
   <!-- =========================
        NAVIGATION
@@ -1285,19 +1380,18 @@
         class="contact-form"
         id="contactForm"
       >
+        <div id="formWarning" class="form-message form-warning"></div>
 
         <input
           type="text"
           id="name"
           placeholder="Your Name"
-          required
         >
 
         <input
           type="email"
           id="email"
           placeholder="Your Email"
-          required
         >
 
         <div class="service-options">
@@ -1305,7 +1399,7 @@
   <p class="service-options-title">What do you need?</p>
 
   <label class="service-option">
-    <input type="radio" name="service" value="Web Development" required>
+    <input type="radio" name="service" value="Web Development">
     <span>Web Development</span>
   </label>
 
@@ -1334,7 +1428,6 @@
         <textarea
           id="message"
           placeholder="Tell me about your project..."
-          required
         ></textarea>
 
         <button
@@ -1411,54 +1504,128 @@
       });
 
     });
+    
+/* WELCOME MESSAGE */
 
+setTimeout(function(){
+
+  const welcomeMessage =
+    document.getElementById("welcomeMessage");
+
+  if(welcomeMessage){
+
+    welcomeMessage.style.transition = "opacity .4s ease";
+    welcomeMessage.style.opacity = "0";
+
+    setTimeout(function(){
+
+      welcomeMessage.remove();
+
+    }, 400);
+
+  }
+
+}, 5000);
 
     /* CONTACT FORM */
 
-    const contactForm = document.getElementById("contactForm");
+    /* CONTACT FORM */
 
-    contactForm.addEventListener("submit", function(event){
+const contactForm = document.getElementById("contactForm");
 
-      event.preventDefault();
+contactForm.addEventListener("submit", function(event){
 
-      const name =
-        document.getElementById("name").value.trim();
+  event.preventDefault();
 
-      const email =
-        document.getElementById("email").value.trim();
+  const name =
+    document.getElementById("name").value.trim();
 
-      const selectedService =
-  document.querySelector('input[name="service"]:checked');
+  const email =
+    document.getElementById("email").value.trim();
 
-const subject =
-  selectedService ? selectedService.value : "";
+  const message =
+    document.getElementById("message").value.trim();
 
-      const message =
-        document.getElementById("message").value.trim();
+  const selectedService =
+    document.querySelector('input[name="service"]:checked');
 
-
-      const mailSubject =
-        encodeURIComponent(
-          "Website Enquiry - " + subject
-        );
+  const warning =
+    document.getElementById("formWarning");
 
 
-      const mailBody =
-        encodeURIComponent(
-          "Name: " + name +
-          "\nEmail: " + email +
-          "\n\nProject Details:\n" +
-          message
-        );
+  /* CHECK EMPTY FIELDS */
+
+  if(
+    !name ||
+    !email ||
+    !selectedService ||
+    !message
+  ){
+
+    warning.textContent =
+      "⚠️ Please fill in all the boxes and select a service before sending.";
+
+    warning.className =
+      "form-message form-warning";
+
+    warning.style.display = "block";
+
+    return;
+  }
 
 
-      window.location.href =
-        "mailto:ayandigitalstudiocustomer@gmail.com" +
-        "?subject=" + mailSubject +
-        "&body=" + mailBody;
+  /* ALL FIELDS ARE FILLED */
 
-    });
+  warning.textContent =
+    "Preparing your enquiry...";
 
+  warning.className =
+    "form-message form-success";
+
+  warning.style.display = "block";
+
+
+  const subject =
+    selectedService.value;
+
+  const mailSubject =
+    encodeURIComponent(
+      "Website Enquiry - " + subject
+    );
+
+  const mailBody =
+    encodeURIComponent(
+      "Name: " + name +
+      "\nEmail: " + email +
+      "\nService: " + subject +
+      "\n\nProject Details:\n" +
+      message
+    );
+
+
+  /* OPEN EMAIL APP */
+
+  window.location.href =
+    "mailto:ayandigitalstudiocustomer@gmail.com" +
+    "?subject=" + mailSubject +
+    "&body=" + mailBody;
+
+
+  /* SUCCESS MESSAGE */
+
+  setTimeout(function(){
+
+    warning.textContent =
+      "✅ Your enquiry has been prepared successfully. Please press Send in your email app.";
+
+    warning.className =
+      "form-message form-success";
+
+    warning.style.display = "block";
+
+  }, 700);
+
+});
   </script>
 
 </body>
