@@ -1272,12 +1272,36 @@
           required
         >
 
-        <input
-          type="text"
-          id="subject"
-          placeholder="Project / Subject"
-          required
-        >
+        <div class="service-options">
+
+  <p class="service-options-title">What do you need?</p>
+
+  <label class="service-option">
+    <input type="radio" name="service" value="Web Development" required>
+    <span>Web Development</span>
+  </label>
+
+  <label class="service-option">
+    <input type="radio" name="service" value="UI Design">
+    <span>UI Design</span>
+  </label>
+
+  <label class="service-option">
+    <input type="radio" name="service" value="Graphic Design">
+    <span>Graphic Design</span>
+  </label>
+
+  <label class="service-option">
+    <input type="radio" name="service" value="Creative Projects">
+    <span>Creative Projects</span>
+  </label>
+
+  <label class="service-option">
+    <input type="radio" name="service" value="Photo Editing">
+    <span>Photo Editing</span>
+  </label>
+
+</div>
 
         <textarea
           id="message"
@@ -1375,8 +1399,11 @@
       const email =
         document.getElementById("email").value.trim();
 
-      const subject =
-        document.getElementById("subject").value.trim();
+      const selectedService =
+  document.querySelector('input[name="service"]:checked');
+
+const subject =
+  selectedService ? selectedService.value : "";
 
       const message =
         document.getElementById("message").value.trim();
